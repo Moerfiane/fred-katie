@@ -5,8 +5,13 @@ public class Area {
         Scanner input = new Scanner (System.in);
         System.out.println("Enter the radius: ");
         double radius= input.nextDouble();
-        double area= radius * 3.14 * radius;
+        if (radius <= 0 ){
+            System.out.println("Must enter positive number !!");
+        } else {
+            double area= radius * 3.14 * radius;
+            System.out.println("area of circle is " + area);
+        }
         input.close();
-        System.out.println("area of circle is " + area);
+
     }
 }
