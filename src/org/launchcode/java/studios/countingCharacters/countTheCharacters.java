@@ -2,10 +2,14 @@ package org.launchcode.java.studios.countingCharacters;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class countTheCharacters {
   public static void main(String[] args) {
-    String phrase = "Sample Sentence";
+  Scanner input= new Scanner(System.in);
+  System.out.println("Enter a string");
+
+    String phrase = input.nextLine();
     char[] characters = phrase.toCharArray();
     HashMap<Character, Integer> charCounts = new HashMap<>();
 
