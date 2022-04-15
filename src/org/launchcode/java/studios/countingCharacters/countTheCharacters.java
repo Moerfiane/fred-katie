@@ -1,6 +1,7 @@
 package org.launchcode.java.studios.countingCharacters;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -9,15 +10,17 @@ public class countTheCharacters {
   Scanner input= new Scanner(System.in);
   System.out.println("Enter a string");
 
-    String phrase = input.nextLine();
+    String phrase = input.nextLine().toLowerCase();
     char[] characters = phrase.toCharArray();
     HashMap<Character, Integer> charCounts = new HashMap<>();
 
     for (int i = 0; i < characters.length; i++) {
-      if (charCounts.containsKey(characters[i])) {
-        charCounts.put(characters[i], charCounts.get(characters[i]) + 1);
-      } else {
-        charCounts.put(characters[i], 1);
+      if(Character.isLetter(characters[i])) {
+        if (charCounts.containsKey(characters[i])) {
+          charCounts.put(characters[i], charCounts.get(characters[i]) + 1);
+        } else {
+          charCounts.put(characters[i], 1);
+        }
       }
     }
 
