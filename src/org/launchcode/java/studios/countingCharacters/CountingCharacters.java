@@ -10,15 +10,12 @@ public class CountingCharacters {
         char[] charInString = quote.toCharArray();
         System.out.println(charInString);
         for (int i = 0; i < charInString.length; i++) {
-            charTable.put(charInString[i],);
+         if (charTable.containsKey(i)){
+             charTable.put(charInString[i], charTable.get(charInString[i]) +1);
+System.out.println(charTable);
+         }
 
-            System.out.println(i);
 
-            for (int j = 0; j < charTable.size(); j++) {
-                if (charTable.containsKey(j)) {
-                    System.out.println(j + "j");
-                }
-            }
         }
     }
 }
