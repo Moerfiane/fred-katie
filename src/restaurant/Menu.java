@@ -2,12 +2,11 @@ package restaurant;
 
 import java.util.Date;
 import java.util.HashMap;
-import restaurant.MenuItem;
 
 public class Menu {
     public HashMap<String, MenuItem> items;
     private Date lastUpdate;
-    private static final int NEW_THRESHOLD = 30;
+    private static final int NEW_THRESHOLD = 30; //number of days an item is considered 'new'
 
     public Menu() {
         this.items = new HashMap<>();

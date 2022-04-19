@@ -1,5 +1,6 @@
 package restaurant;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class MenuItem {
@@ -8,6 +9,7 @@ public class MenuItem {
     private String category;
     private double price;
     private Date dateAdded;
+
     public String getName() {
         return name;
     }
@@ -40,6 +42,14 @@ public class MenuItem {
         this.dateAdded = dateAdded;
     }
 
+    public MenuItem(String name, String description, String category, double price) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.dateAdded = new Date();
+    }
+
     public MenuItem(String name, String description, String category, double price, Date dateAdded) {
         this.name = name;
         this.description = description;
@@ -49,6 +59,9 @@ public class MenuItem {
     }
 
     public boolean isNew(int newThreshold) {
-        return new Date().compareTo(dateAdded) > newThreshold;
+        Calendar cutoff = Calendar.getInstance();
+        cutoff.setTime(dateAdded);
+        cutoff.add(Calendar.DAY_OF_MONTH, newThreshold);
+        return Calendar.getInstance().before(cutoff);
     }
 }
