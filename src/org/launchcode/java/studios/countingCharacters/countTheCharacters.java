@@ -1,7 +1,6 @@
 package org.launchcode.java.studios.countingCharacters;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -27,5 +26,6 @@ public class countTheCharacters {
     for (Map.Entry<Character, Integer> charCount : charCounts.entrySet()) {
       System.out.println(charCount.getKey() + ": " + charCount.getValue());
     }
+    input.close();
   }
 }
