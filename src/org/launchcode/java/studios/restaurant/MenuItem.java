@@ -2,16 +2,21 @@ package org.launchcode.java.studios.restaurant;
 import java.util.ArrayList;
 
 public class MenuItem {
-    private Double price;
+    private String name;
+    private double price;
     private String description;
-    private ArrayList<String> category;
+    private String category;
 
-    public MenuItem (Double aPrice, String aDescription, ArrayList<String> aCategory){
+    public MenuItem (String aName,double aPrice, String aDescription, String aCategory){
+        name = aName;
         price = aPrice;
         description = aDescription;
         category = aCategory;
     }
 
+    public String getName() {
+        return name;
+    }
     public Double getPrice() {
         return price;
     }
@@ -19,11 +24,14 @@ public class MenuItem {
         return description;
     }
 
-    public ArrayList<String> getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setPrice(Double price) {
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -31,7 +39,7 @@ public class MenuItem {
         this.description = description;
     }
 
-    public void setCategory(ArrayList<String> category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 }
