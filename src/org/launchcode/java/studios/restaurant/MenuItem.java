@@ -2,44 +2,53 @@ package org.launchcode.java.studios.restaurant;
 import java.util.ArrayList;
 
 public class MenuItem {
-    private String name;
+
     private double price;
     private String description;
     private String category;
+    private boolean isNew = true;
 
-    public MenuItem (String aName,double aPrice, String aDescription, String aCategory){
-        name = aName;
-        price = aPrice;
-        description = aDescription;
-        category = aCategory;
+
+    public MenuItem(double price, String description, String category) {
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.isNew = true;
     }
 
-    public String getName() {
-        return name;
+
+    // getter for .price
+    public double getPrice() {
+        return this.price;
     }
-    public Double getPrice() {
-        return price;
-    }
-    public String getDescription(){
+
+    // getter for .description
+    public String getDescription() {
         return description;
     }
 
+    // getter for .category
     public String getCategory() {
         return category;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    // getter for .isNew --> notice the syntax is a little different I didn't use getIsNew() -> just isNew() makes sense as it can only return either true or false
+    public boolean isNew() {
+        return isNew;
     }
+
+    // setter for .price()
     public void setPrice(double price) {
         this.price = price;
     }
 
+    // setter for .description
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    // setter for isNew
+    public void setNew(boolean isNew) {
+        this.isNew = isNew;
     }
 }
