@@ -42,14 +42,6 @@ public class MenuItem {
         this.dateAdded = dateAdded;
     }
 
-    public MenuItem(String name, String description, String category, double price) {
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.dateAdded = new Date();
-    }
-
     public MenuItem(String name, String description, String category, double price, Date dateAdded) {
         this.name = name;
         this.description = description;
@@ -58,10 +50,18 @@ public class MenuItem {
         this.dateAdded = dateAdded;
     }
 
+    public MenuItem(String name, String description, String category, double price) {
+        this(name, description, category, price, new Date());
+    }
+
     public boolean isNew(int newThreshold) {
         Calendar cutoff = Calendar.getInstance();
         cutoff.setTime(dateAdded);
         cutoff.add(Calendar.DAY_OF_MONTH, newThreshold);
         return Calendar.getInstance().before(cutoff);
+    }
+
+    public String display() {
+        return String.format("%1s $%2$02.2f %n %3$s", name, price, description);
     }
 }
