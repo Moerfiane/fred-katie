@@ -11,38 +11,6 @@ public class MenuItem {
     private double price;
     private Date dateAdded;
 
-    public String getName() {
-        return name;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public String getCategory() {
-        return category;
-    }
-    public double getPrice() {
-        return price;
-    }
-    public Date getDateAdded() {
-        return dateAdded;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public void setCategory(String category) {
-        this.category = category;
-    }
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    public void setDateAdded(Date dateAdded) {
-        this.dateAdded = dateAdded;
-    }
-
     public MenuItem(String name, String description, String category, double price, Date dateAdded) {
         this.name = name;
         this.description = description;
@@ -77,5 +45,45 @@ public class MenuItem {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public Date getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
     }
 }

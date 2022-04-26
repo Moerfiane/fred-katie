@@ -21,10 +21,25 @@ public class Menu {
     public void addItem(String name, MenuItem item) {
         this.items.put(name, item);
     }
-    public void removeItem(String name) {this.items.remove(name);}
 
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
+    public void addItem(String name, String description, String category, double price) {
+        this.items.put(name, new MenuItem(name, description, category, price));
+    }
+
+    public void addItem(String name, String description, String category, double price, Date dateAdded) {
+        this.items.put(name, new MenuItem(name, description, category, price, dateAdded));
+    }
+
+    public void removeItem(String name) {
+        this.items.remove(name);
+    }
+
+    public String display() { //TODO: sort and categorize displayed items
+        ArrayList<String> listings = new ArrayList<>(items.size());
+        for (MenuItem item : items.values()) {
+            listings.add(item.display());
+        }
+        return String.join("\n\n", listings);
     }
 
     public HashMap<String, MenuItem> getItems() {
@@ -35,11 +50,7 @@ public class Menu {
         return lastUpdate;
     }
 
-    public String display() { //TODO: sort and categorize displayed items
-        ArrayList<String> listings = new ArrayList<>(items.size());
-        for (MenuItem item: items.values()) {
-            listings.add(item.display());
-        }
-        return String.join("\n\n", listings);
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 }
