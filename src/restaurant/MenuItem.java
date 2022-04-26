@@ -2,6 +2,7 @@ package restaurant;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class MenuItem {
     private String name;
@@ -63,5 +64,18 @@ public class MenuItem {
 
     public String display() {
         return String.format("%1s $%2$02.2f %n %3$s", name, price, description);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return name.equals(menuItem.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

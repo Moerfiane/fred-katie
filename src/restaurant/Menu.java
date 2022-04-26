@@ -21,9 +21,18 @@ public class Menu {
     public void addItem(String name, MenuItem item) {
         this.items.put(name, item);
     }
+    public void removeItem(String name) {this.items.remove(name);}
 
     public void setLastUpdate(Date lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public HashMap<String, MenuItem> getItems() {
+        return items;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
     }
 
     public String display() { //TODO: sort and categorize displayed items
