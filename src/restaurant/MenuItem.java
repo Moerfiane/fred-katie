@@ -23,6 +23,16 @@ public class MenuItem {
         this(name, description, category, price, new Date());
     }
 
+    /**
+     * Indicates whether an item is considered 'new'
+     * according to the given threshold.
+     *
+     * @param newThreshold number of days to consider
+     *      an item 'new' after it has been added.
+     * @return {@code true} if the current date is less than
+     *      {@code newThreshold} days after {@code dateAdded},
+     *      and {@code false} otherwise.
+     */
     public boolean isNew(int newThreshold) {
         Calendar cutoff = Calendar.getInstance();
         cutoff.setTime(dateAdded);
@@ -30,6 +40,13 @@ public class MenuItem {
         return Calendar.getInstance().before(cutoff);
     }
 
+    /**
+     * Returns a string representing the menu item
+     * as it might appear on a restaurant menu.
+     *
+     * @return a formatted string listing the item's
+     * name, price, and description.
+     */
     public String display() {
         return String.format("%1s $%2$02.2f %n %3$s", name, price, description);
     }

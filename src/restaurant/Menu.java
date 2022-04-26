@@ -34,6 +34,13 @@ public class Menu {
         this.items.remove(name);
     }
 
+    /**
+     * Returns a formatted string representation
+     * of the menu's {@code items} field.
+     *
+     * @return a string representing the menu's items.
+     * @see MenuItem#display()
+     */
     public String display() { //TODO: sort and categorize displayed items
         ArrayList<String> listings = new ArrayList<>(items.size());
         for (MenuItem item : items.values()) {
