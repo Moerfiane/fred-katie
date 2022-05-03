@@ -21,7 +21,7 @@ public abstract class Question {
         this(prompt, answer,options, 1.0);
     }
 
-    public abstract Double grade(String response);
+    public abstract Double grade(String response) throws Exception;
 
     public String getPrompt() {
         return prompt;

@@ -15,9 +15,9 @@ public class MultipleChoice extends Question {
 
     @Override
     public Double grade(String response) {
-        if(response.equals(getAnswer())){
-             return getPoints();
-        }else {
+        if (response.equals(getAnswer())) {
+            return getPoints();
+        } else {
 
             return 0.0;
         }
