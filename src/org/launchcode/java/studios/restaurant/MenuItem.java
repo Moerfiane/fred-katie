@@ -51,4 +51,13 @@ public class MenuItem {
     public void setNew(boolean isNew) {
         this.isNew = isNew;
     }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "price=" + price +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                '}';
+    }
 }
