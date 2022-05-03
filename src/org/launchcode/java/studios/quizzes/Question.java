@@ -20,5 +20,7 @@ public abstract class Question {
 
     public abstract int askQuestion();
 
+    public int numberCorrectAnswers;
+
 
 }
