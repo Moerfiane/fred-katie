@@ -1,23 +1,27 @@
 package quiz;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Question {
     private String prompt;
     private String answer;
     private Double points;
+    private ArrayList<String> options;
 
-    public Question(String prompt, String answer, Double points) {
+
+    public Question(String prompt, String answer,ArrayList<String> options,Double points) {
         this.prompt = prompt;
         this.answer = answer;
         this.points = points;
+        this.options = options;
     }
 
-    public Question(String prompt, String answer){
-        this(prompt, answer, 1.0);
+    public Question(String prompt, String answer,ArrayList<String> options){
+        this(prompt, answer,options, 1.0);
     }
 
-    public abstract Double grade();
+    public abstract Double grade(String response);
 
     public String getPrompt() {
         return prompt;
@@ -33,6 +37,14 @@ public abstract class Question {
 
     public void setPoints(Double points) {
         this.points = points;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public ArrayList<String> getOptions() {
+        return options;
     }
 
     @Override
