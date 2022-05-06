@@ -17,4 +17,34 @@ public abstract class Disc {
         this.useCapacity = useCapacity;
         this.contents = contents;
     }
+
+    public int getStorageCapacity() {
+        return storageCapacity;
+    }
+
+    public void setStorageCapacity(int storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
+    public int getRemainCapacity() {
+        return remainCapacity;
+    }
+
+    public void setRemainCapacity(int remainCapacity) {
+        this.remainCapacity = remainCapacity;
+    }
+
+    public int getUseCapacity() {
+        return useCapacity;
+    }
+
+    public void setUseCapacity(int useCapacity) {
+        this.useCapacity = useCapacity;
+    }
+
+    public int storageLeft() {
+        return this.storageCapacity - this.useCapacity;
+
+    }
+
 }
